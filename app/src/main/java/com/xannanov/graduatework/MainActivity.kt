@@ -8,6 +8,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.hivemq.client.mqtt.MqttClient
+import com.hivemq.client.mqtt.mqtt3.Mqtt3AsyncClient
 import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
@@ -37,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
 
-        val mqtt = MqttClient.builder()
+        val mqtt: Mqtt3AsyncClient = MqttClient.builder()
             .useMqttVersion3()
             .identifier(clientId) // choose a unique client ID
             .serverHost(host) // replace with your broker's host name

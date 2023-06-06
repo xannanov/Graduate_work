@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listOfDevicesFragment">
+
+    <fragment
+        android:id="@+id/listOfDevicesFragment"
+        android:name="com.xannanov.graduatework.presentation.start.ListOfDevicesFragment"
+        android:label="fragment_list_of_devices"
+        tools:layout="@layout/fragment_list_of_devices">
+        <action
+            android:id="@+id/action_listOfDevicesFragment_to_addNewDeviceFragment"
+            app:destination="@id/addNewDeviceFragment" />
+        <action
+            android:id="@+id/action_listOfDevicesFragment_to_manageDeviceFragment"
+            app:destination="@id/manageDeviceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewDeviceFragment"
+        android:name="com.xannanov.graduatework.presentation.addnewdevice.AddNewDeviceFragment"
+        android:label="fragment_add_new_device"
+        tools:layout="@layout/fragment_add_new_device" >
+        <action
+            android:id="@+id/action_addNewDeviceFragment_to_settingSmartControlFragment"
+            app:destination="@id/settingSmartControlFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/manageDeviceFragment"
+        android:name="com.xannanov.graduatework.presentation.managedevice.ManageDeviceFragment"
+        android:label="fragment_manage_device"
+        tools:layout="@layout/fragment_manage_device">
+
+        <argument
+            android:name="uuid"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingSmartControlFragment"
+        android:name="com.xannanov.graduatework.presentation.addnewdevice.bt.setting.SettingSmartControlFragment"
+        android:label="fragment_setting_smart_control"
+        tools:layout="@layout/fragment_setting_smart_control">
+
+        <argument
+            android:name="uuid"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+</navigation>
